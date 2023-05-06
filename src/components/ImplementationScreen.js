@@ -98,23 +98,8 @@ function ImplementationScreen() {
 			
 			<h2>Integration</h2>
 			
-            <p>To perform emotional analysis using OpenCV, you can follow these steps:</p>
-			<ul>
-				<li>Detect faces in the image or video using the OpenCV face detection algorithm. This will identify the location of the face(s) in the image or video.</li>
-				<li>Once you have detected the face(s), you can use OpenCV's facial landmark detection to identify the key points on the face, such as the corners of the eyes and the mouth.</li>
-				<li>With the location of these facial landmarks, you can compute various features of the face, such as the distance between the eyebrows, the curvature of the lips, and the angle of the jaw.</li>
-				<li>These features can then be used to classify the emotions of the person, such as happiness, sadness, or anger, using a machine learning model.</li>
-			</ul>
-			<p>There are various machine learning models available that can be used for emotional analysis, such as Support Vector Machines (SVM), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN). These models can be trained on labeled datasets of facial expressions to learn to recognize the different emotions.</p>
-
-			<p>CNNs are commonly used for image classification tasks, and they can be applied to emotional analysis by treating facial expressions as images. CNNs can learn to extract meaningful features from the raw pixels of an image, which can be useful for detecting complex emotional expressions.</p>
-			<p>SVMs are a popular algorithm for classification tasks and can also be used for emotional analysis. SVMs work by finding the hyperplane that maximally separates the different classes in the feature space, which can be useful for detecting more simple emotional expressions.</p>
-			<p>The choice of the model depends on the complexity of the task and the available dataset. For example, if the dataset contains a large number of complex facial expressions, a CNN may be better suited for the task. If the dataset contains simple expressions, such as smiling or frowning, an SVM may be sufficient.</p>
-			<p>Additionally, different models may require different preprocessing steps, such as data normalization or feature scaling. It's important to carefully evaluate the performance of different models and preprocessing steps to choose the best approach for the specific task at hand.</p>
+            <p>Once I had the model trained, I was able to save this model into a Keras HDF5 file for reuse. This file can then be <a href="https://www.tensorflow.org/js/guide/conversion">converted</a> into a TensorFlow.js JSON format.</p>
 			
-            
-
-
 
 
         </Container>
