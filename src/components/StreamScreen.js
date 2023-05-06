@@ -17,7 +17,7 @@ function StreamScreen() {
     const [streamObject, setStreamObject] = useState([]);
     const { loaded, cv } = useOpenCv();
 	
-	const modelData = require("../model/model.json");
+	const modelData = require("../model/new_model.json");
 	const faceCascadeData = require("../model/haarcascade_frontalface_default.xml");
 	
 	useEffect(() => {
