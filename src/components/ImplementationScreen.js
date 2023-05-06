@@ -10,7 +10,7 @@ function ImplementationScreen() {
     return (
         <Container className='myContainer' id='ImplementationContainer'>
             <h1 className='purple'>Implementation</h1>
-			<p>Our current version of the model was trained with the images from the open dataset <a href = "https://www.kaggle.com/datasets/msambare/fer2013">FER-2013</a> available from Kaggle. This dataset consists of 35,874 48x48 grayscale images. The images in dataset vary in age, pose and occlusion (<a className = 'cite' href = "#Goodfellow_2015">Goodfellow et al., 2015</a>). The dataset was split into training and testing as indicated in Table 1.</p>
+			<p>Our current version of the model was trained with the images from the open dataset <a href = "https://www.kaggle.com/datasets/msambare/fer2013">FER-2013</a> available from Kaggle. This dataset consists of 32,298 48x48 grayscale images. The images in dataset vary in age, pose and occlusion (<a className = 'cite' href = "#Goodfellow_2015">Goodfellow et al., 2015</a>). The dataset was split into training and testing as indicated in Table 1.</p>
 
 			<table className='center_table'>
 				<tbody>
@@ -21,8 +21,8 @@ function ImplementationScreen() {
 					</tr>
 					<tr>
 						<td>Anger</td>
-						<td className="rightAlign">3,980</td>
-						<td className="rightAlign">960</td>
+						<td className="rightAlign">3,995</td>
+						<td className="rightAlign">958</td>
 					</tr>
 					<tr>
 						<td>Disgust</td>
@@ -31,28 +31,28 @@ function ImplementationScreen() {
 					</tr>
 					<tr>
 						<td>Fear</td>
-						<td className="rightAlign">4,103</td>
-						<td className="rightAlign">1,018</td>
+						<td className="rightAlign">4,097</td>
+						<td className="rightAlign">1,024</td>
 					</tr>
 					<tr>
 						<td>Happy</td>
-						<td className="rightAlign">7,164</td>
-						<td className="rightAlign">1,825</td>
+						<td className="rightAlign">7,215</td>
+						<td className="rightAlign">1,774</td>
 					</tr>
 					<tr>
 						<td>Neutral</td>
-						<td className="rightAlign">4,982</td>
-						<td className="rightAlign">1,216</td>
+						<td className="rightAlign">4,965</td>
+						<td className="rightAlign">1,233</td>
 					</tr>
 					<tr>
 						<td>Sad</td>
-						<td className="rightAlign">4,938</td>
-						<td className="rightAlign">1,139</td>
+						<td className="rightAlign">4,830</td>
+						<td className="rightAlign">1,247</td>
 					</tr>
 					<tr>
 						<td>Surprise</td>
-						<td className="rightAlign">3,205</td>
-						<td className="rightAlign">797</td>
+						<td className="rightAlign">3,171</td>
+						<td className="rightAlign">831</td>
 					</tr>				
 				</tbody>
 			</table>

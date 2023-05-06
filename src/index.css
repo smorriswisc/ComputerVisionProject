@@ -23,6 +23,10 @@ code {
     monospace;
 }
 
+.bold {
+	font-weight:bold;
+}
+
 p {
   text-align: left;
 }
