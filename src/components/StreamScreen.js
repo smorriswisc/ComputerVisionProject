@@ -249,20 +249,27 @@ function StreamScreen() {
 			<p>Note that your video stream is not uploaded anywhere and is only used locally.</p>
 			
             <div>
-                <div>
-					<video className='borderClass' id="video" width="640" height="480" autoPlay
-                        ref={video}></video>
-					<canvas className='borderClass' id="outputCanvas" width="640" height="480"
-                        ref={outputCanvas}></canvas>
+                <div className="streams">
+					<div>
+						<h3>Input</h3>
+						<video className='borderClass' id="video" width="640" height="480" autoPlay
+							ref={video}></video>
+					</div>
+					<div>
+						<h3>Output</h3>
+						<canvas className='borderClass' id="outputCanvas" width="640" height="480"
+							ref={outputCanvas}></canvas>
+					</div>
+                </div>
+				<div>
+					<span>Face:</span>
 					<canvas className='borderClass' id="faceCanvas" width="48" height="48"
                         ref={faceCanvas}></canvas>
-                </div>
+				</div>
                 <div>
                     <input type="button" id="enableButton" onClick={enableStream} value={buttonText} disabled={disableStreamButton}></input>
-                    <p>Demo is still a work in progress!</p>
                     <h4>Status:</h4>
                     <p>{statusText}</p>
-					<p>We are working to integrate OpenCV and TensorFlow into this webpage to let you run the model in your browser.</p>
                 </div>
             </div>
         </Container>

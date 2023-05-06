@@ -53,6 +53,10 @@ ol {
 	text-align: left;
 }
 
+.streams {
+	display: flex;
+}
+
 .nodisp {
 	display: none;	
 }

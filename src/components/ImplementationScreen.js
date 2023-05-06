@@ -10,7 +10,13 @@ function ImplementationScreen() {
     return (
         <Container className='myContainer' id='ImplementationContainer'>
             <h1 className='purple'>Implementation</h1>
-			<p>Our current version of the model was trained with the images from the open dataset <a href = "https://www.kaggle.com/datasets/msambare/fer2013">FER-2013</a> available from Kaggle. This dataset consists of 32,298 48x48 grayscale images. The images in dataset vary in age, pose and occlusion (<a className = 'cite' href = "#Goodfellow_2015">Goodfellow et al., 2015</a>). The dataset was split into training and testing as indicated in Table 1.</p>
+			
+			<h2>Model</h2>
+			<p>I followed the training steps as described in this Jupyter Notebook resource: <a href="https://www.kaggle.com/code/piyushjain16/facial-emotion-detection">Facial Emotion Detection</a>.</p>
+			
+			
+			<h2>Dataset</h2>
+			<p>Our model was trained with the images from the open dataset <a href = "https://www.kaggle.com/datasets/msambare/fer2013">FER-2013</a> available from Kaggle. This dataset consists of 32,298 48x48 grayscale images. The images in dataset vary in age, pose and occlusion (<a className = 'cite' href = "#Goodfellow_2015">Goodfellow et al., 2015</a>). The dataset was split into training and testing as indicated in Table 1.</p>
 
 			<table className='center_table'>
 				<tbody>

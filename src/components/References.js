@@ -18,7 +18,7 @@ function References() {
 		
 		<li id = "podoletz_2022">Podoletz, L. (2022). We have to talk about emotional AI and crime. AI & Society. <a href='https://doi.org/10.1007/s00146-022-01435-w'>https://doi.org/10.1007/s00146-022-01435-w</a>  
 		</li>
-		<li id = "suk_0214"> Suk, M., & Prabhakaran, B. (2014). Real-Time Mobile Facial Expression Recognition System -- A Case Study. 2014 IEEE Conference on Computer Vision and Pattern Recognition Workshops. <a href = "https://doi:10.1109/cvprw.2014.25">https://doi:10.1109/cvprw.2014.25</a></li>
+		<li id = "suk_0214"> Suk, M., & Prabhakaran, B. (2014). Real-Time Mobile Facial Expression Recognition System -- A Case Study. 2014 IEEE Conference on Computer Vision and Pattern Recognition Workshops. <a href = "https://doi.org/10.1109/cvprw.2014.25">https://doi.org/10.1109/cvprw.2014.25</a></li>
 	
 		<li id = "venable_2022"> Venable, M. A. (2022). 2022 Online Education Trends Report. BestColleges.com <a href='https://www.bestcolleges.com/research/annual-trends-in-online-education/'>https://www.bestcolleges.com/research/annual-trends-in-online-education/</a></li>
 		
