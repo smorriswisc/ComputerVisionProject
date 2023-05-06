@@ -99,6 +99,7 @@ function ImplementationScreen() {
 			<h2>Integration</h2>
 			
             <p>Once I had the model trained, I was able to save this model into a Keras HDF5 file for reuse. This file can then be <a href="https://www.tensorflow.org/js/guide/conversion">converted</a> into a TensorFlow.js JSON format.</p>
+			<p>This JSON model has been loaded into Javascript and for use below.</p>
 			
 
 

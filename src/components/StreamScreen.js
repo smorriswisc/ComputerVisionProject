@@ -174,8 +174,9 @@ function StreamScreen() {
 						let face = faces.get(i);
 						let faceImg = gray.roi(face);
 						cv.resize(faceImg, faceImg, new cv.Size(48, 48));
+						const imageData = cv.imshow(faceCanvas, faceImg);
 						tf.tidy(() => {
-							faceContext.drawImage(video, face.x, face.y, face.width, face.height, 0, 0, faceCanvas.width, faceCanvas.height);
+							
 							const roiTensor = tf.browser.fromPixels(faceCanvas, 1).expandDims(0);
 							const prediction = model.predict(roiTensor);
 							
@@ -199,7 +200,6 @@ function StreamScreen() {
 							outContext.rect(face.x, face.y, face.width, face.height);
 							outContext.stroke();
 							
-							//faceContext.drawImage(faceCanvas, faceImg.x, faceImg.y, faceImg.width, faceImg.height, 0, 0, faceCanvas.width, faceCanvas.height);
 						});
 						faceImg.delete();
 					}
@@ -236,12 +236,12 @@ function StreamScreen() {
 			<p>
 				The below implementation runs locally in your browser. If you have a webcam, you can play with the model and see what emotions it detects.
 			</p>
-			<h4>Steps:</h4>
+			<h4>Implementation Steps:</h4>
 			<ol>
-				<li>Request Webcam.</li>
-				<li>Extract image from webcam video.</li>
-				<li>Convert the image into gray scale.</li>
-				<li>Recognize faces in the scene and display a rectangle around the face.</li>
+				<li>Request webcam access from the browser and user.</li>
+				<li>Extract image from webcam video</li>
+				<li>Convert the image into gray scale</li>
+				<li>Recognize faces in the scene and display a rectangle around the face. This is done with OpenCV.</li>
 				<li>For each identified face, extract the face and resize to 48x48.</li>
 				<li>Use the CNN classifier to predict the emotion expressed by the face in the frame.</li>
 				<li>Display the predicted emotion over the rectangle.</li>
@@ -262,7 +262,6 @@ function StreamScreen() {
 					</div>
                 </div>
 				<div>
-					<span>Face:</span>
 					<canvas className='borderClass' id="faceCanvas" width="48" height="48"
                         ref={faceCanvas}></canvas>
 				</div>
