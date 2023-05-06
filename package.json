@@ -1,7 +1,7 @@
 {
   "name": "CS766",
-  "version": "0.1.0",
-  "homepage": "https://rama25.github.io/-Emotional-Analysis-Using-CNN",
+  "version": "0.2.0",
+  "homepage": "https://smorriswisc.github.io/ComputerVisionProject",
   "private": true,
   "dependencies": {
     "@tensorflow/tfjs": "^4.4.0",
