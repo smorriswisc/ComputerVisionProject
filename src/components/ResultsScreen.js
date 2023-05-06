@@ -19,7 +19,6 @@ function ResultsScreen() {
 				<li>ROC Curve: The ROC curve for the CER model on the Emotion Recognition Challenge dataset showed an area under the curve (AUC) of 0.88, indicating that the model performed reasonably well in differentiating between positive and negative emotions.</li>
 			</ul>
 			<p>Our code repository can be found here <a href = "https://github.com/smorriswisc/ComputerVisionProject">https://github.com/smorriswisc/ComputerVisionProject</a></p>
-			</p>
 		
 		</Container>
 
