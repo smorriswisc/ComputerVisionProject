@@ -18,8 +18,7 @@ function ResultsScreen() {
 				<li>Confusion Matrix: The confusion matrix for the CER model on the Emotion Recognition Challenge dataset showed that it performed well on happy, neutral, and sad expressions, but struggled with surprise, anger, fear, and disgust expressions.</li>
 				<li>ROC Curve: The ROC curve for the CER model on the Emotion Recognition Challenge dataset showed an area under the curve (AUC) of 0.88, indicating that the model performed reasonably well in differentiating between positive and negative emotions.</li>
 			</ul>
-			<p>Our code repository can be found here <a href = "https://github.com/rama25/-Emotional-Analysis-Using-CNN"> https://github.com/rama25/-Emotional-Analysis-Using-CNN</a></p>
-			<p>Our presentation slides can be <a href = "https://uwprod-my.sharepoint.com/:p:/g/personal/rranganath_wisc_edu/Ea0ysH2DR4BOvkhrMNyoMRcBm52xrk_nhO2ulkgUjsz0IA?e=4GffQi">found here</a>.
+			<p>Our code repository can be found here <a href = "https://github.com/smorriswisc/ComputerVisionProject">https://github.com/smorriswisc/ComputerVisionProject</a></p>
 			</p>
 		
 		</Container>
