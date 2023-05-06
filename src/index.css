@@ -57,6 +57,10 @@ ol {
 	display: flex;
 }
 
+.code {
+	font-family: monospace;
+}
+
 .nodisp {
 	display: none;	
 }
