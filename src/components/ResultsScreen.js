@@ -1,12 +1,14 @@
 
 import React from 'react';
 import Container from 'react-bootstrap/Container';
+import surprisePic from '../Figures/Surprise.png';
 
 function ResultsScreen() {
 
     return (
         <Container className='myContainer' id='ResultsContainer'>
             <h1 className='orange'>Results</h1>
+			<img src={surprisePic} alt="Picture of Surprise" className=""></img>
 			
 			<h3>Evaluation</h3>
 			<p>Even though I used the same training set and the same CNN model to start with, the accuracy of my trained model is slightly different than what was reported by <a href="https://www.kaggle.com/code/piyushjain16/facial-emotion-detection">piyushjain16</a>.</p>
