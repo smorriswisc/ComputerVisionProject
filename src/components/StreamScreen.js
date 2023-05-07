@@ -11,6 +11,7 @@ function StreamScreen() {
     const faceCanvas = useRef(null);
     const [stream, setStream] = useState(true);
     const [xmlLoaded, setXmlLoaded] = useState(false);
+    const [binsLoaded, setBinsLoaded] = useState(false);
     const [disableStreamButton, setDisableStreamButton] = useState(true);
     const [buttonText, setButtonText] = useState("Enable Stream");
     const [statusText, setStatusText] = useState("Loading OpenCV");
@@ -18,6 +19,11 @@ function StreamScreen() {
     const { loaded, cv } = useOpenCv();
 	
 	const modelData = require("../model/new_model.json");
+	const bin1 = require("../model/group1-shard1of5.bin");
+	const bin2 = require("../model/group1-shard2of5.bin");
+	const bin3 = require("../model/group1-shard3of5.bin");
+	const bin4 = require("../model/group1-shard4of5.bin");
+	const bin5 = require("../model/group1-shard5of5.bin");
 	const faceCascadeData = require("../model/haarcascade_frontalface_default.xml");
 	
 	useEffect(() => {
@@ -73,60 +79,83 @@ function StreamScreen() {
         try
         {
 		
-			function createFileFromUrl(path, url, callback) {
-				let request = new XMLHttpRequest();
-				request.open('GET', url, true);
-				request.responseType = 'arraybuffer';
-				request.onload = function(ev) {
-					if (request.readyState === 4) {
-						if (request.status === 200) {
-							let data = new Uint8Array(request.response);
-							cv.FS_createDataFile('/', path, data, true, false, false);
-							setXmlLoaded(true);
-							callback();
-						} else {
-							console.printError('Failed to load ' + url + ' status: ' + request.status);
+			function createFileFromUrl(path, url) {
+				return new Promise((resolve, reject) => {
+					const request = new XMLHttpRequest();
+					request.open('GET', url, true);
+					request.responseType = 'arraybuffer';
+					request.onload = function() {
+						if (request.readyState === 4) {
+							if (request.status === 200) {
+								let data = new Uint8Array(request.response);
+								cv.FS_createDataFile('', path, data, true, false, false);
+								resolve();
+							} else {
+								console.printError('Failed to load ' + url + ' status: ' + request.status);
+								reject(new Error('Failed to load ' + url + ' status: ' + request.status));
+							}
 						}
-					}
-				};
-				request.send();
-			};
-			
-			function doLoadXml()
-			{
-				let loadSuccess = faceCascade.load("haarcascade_frontalface_default.xml");
-				if (!loadSuccess)
-				{
-					console.log("Unable to load xml");
-					setStatusText("Unable to load xml");
-					setStream(false);
-					return;
-				}
+					};
+					request.send();
+				});
 			};
 			
             const faceCascade = new cv.CascadeClassifier();
 			
 			if(!xmlLoaded)
 			{
-				createFileFromUrl("haarcascade_frontalface_default.xml", faceCascadeData, () => {
-					doLoadXml();
-				});
+				await createFileFromUrl("haarcascade_frontalface_default.xml", faceCascadeData);
+				setXmlLoaded(true);
 			}
-			else
+			let loadSuccess = faceCascade.load("haarcascade_frontalface_default.xml");
+			if (!loadSuccess)
 			{
-				doLoadXml();
+				console.log("Unable to load xml");
+				setStatusText("Unable to load xml");
+				setStream(false);
+				return;
 			}
 			
+			if(!binsLoaded)
+			{
+				await createFileFromUrl("group1-shard1of5.bin", bin1);
+				await createFileFromUrl("group1-shard2of5.bin", bin2);
+				await createFileFromUrl("group1-shard3of5.bin", bin3);
+				await createFileFromUrl("group1-shard4of5.bin", bin4);
+				await createFileFromUrl("group1-shard5of5.bin", bin5);
+				setBinsLoaded(true);
+			}
+			let response = await fetch(bin1);
+			let buffer = await response.arrayBuffer();
+			const bin1Content = new Uint8Array(buffer);
 			
-			// Load the pre-trained model
-			const loaderHelper = {
-				load() 
-				{
-					return modelData;	
-				}
-			};
-			const model = await tf.loadLayersModel(loaderHelper);
-
+			response = await fetch(bin2);
+			buffer = await response.arrayBuffer();
+			const bin2Content = new Uint8Array(buffer);
+			
+			response = await fetch(bin3);
+			buffer = await response.arrayBuffer();
+			const bin3Content = new Uint8Array(buffer);
+			
+			response = await fetch(bin4);
+			buffer = await response.arrayBuffer();
+			const bin4Content = new Uint8Array(buffer);
+			
+			response = await fetch(bin5);
+			buffer = await response.arrayBuffer();
+			const bin5Content = new Uint8Array(buffer);
+			
+			const files = [
+			  new File([bin1Content], 'group1-shard1of5.bin'),
+			  new File([bin2Content], 'group1-shard2of5.bin'),
+			  new File([bin3Content], 'group1-shard3of5.bin'),
+			  new File([bin4Content], 'group1-shard4of5.bin'),
+			  new File([bin5Content], 'group1-shard5of5.bin')
+			];
+			const jsonStr = JSON.stringify(modelData);
+			const modelblob = new Blob([jsonStr], {type: 'application/json'});
+			const model = await tf.loadLayersModel(tf.io.browserFiles([modelblob, ...files]));
+			
             function processVideo()
             {
 				if (video.paused || video.ended) 
@@ -141,6 +170,7 @@ function StreamScreen() {
 				
 				try
 				{
+					
 					outContext.drawImage(video, 0, 0, outputCanvas.width, outputCanvas.height);
 					let imageData = outContext.getImageData(0, 0, outputCanvas.width, outputCanvas.height);
 					src.data.set(imageData.data);
@@ -157,25 +187,31 @@ function StreamScreen() {
 					
 					try
 					{
-						faceCascade.detectMultiScale(gray, faces, 1.1, 3, 0, minSize, maxSize);
+						faceCascade.detectMultiScale(gray, faces, 1.3, 5, 0, minSize, maxSize);
 					}
 					catch(ptr)
 					{
 						let err = cv.exceptionFromPtr(ptr)
 						console.log("An error occurred: " + err.msg);
 						setStatusText("An error occurred: " + err.msg);
+						video.removeEventListener('play', reqAnimFram);
 						setStream(false);
 						return;
 					}
+					
+					if (faces.size() == 0)
+					{
+						faceContext.clearRect(0, 0, faceCanvas.width, faceCanvas.height);
+					}
 	
 					// Extract features and classify emotions using the pre-trained model
-					for (let i = 0; i < faces.size(); ++i) 
+					for (let i = 0; i < faces.size(); i++) 
 					{
-						let face = faces.get(i);
-						let faceImg = gray.roi(face);
-						cv.resize(faceImg, faceImg, new cv.Size(48, 48));
-						const imageData = cv.imshow(faceCanvas, faceImg);
 						tf.tidy(() => {
+							let face = faces.get(i);
+							let faceImg = gray.roi(face);
+							cv.resize(faceImg, faceImg, new cv.Size(48, 48));
+							cv.imshow(faceCanvas, faceImg);
 							
 							const roiTensor = tf.browser.fromPixels(faceCanvas, 1).expandDims(0);
 							const prediction = model.predict(roiTensor);
@@ -192,7 +228,8 @@ function StreamScreen() {
 							let textSize = Math.max(face.width / 10, 16);
 							outContext.font = textSize + "px Arial";
 							outContext.fillStyle = "red";
-							outContext.fillText(emotion, face.x + 0.5 * (face.width - textSize * emotion.length), face.y - 5);
+							let perc = Math.round(predictionData[maxIndex] * 100);
+							outContext.fillText(emotion + " " + perc + "%", face.x + 0.5 * (face.width - textSize * emotion.length), face.y - 5);
 							
 							outContext.beginPath();
 							outContext.lineWidth = "3";
@@ -200,13 +237,14 @@ function StreamScreen() {
 							outContext.rect(face.x, face.y, face.width, face.height);
 							outContext.stroke();
 							
+							faceImg.delete();
 						});
-						faceImg.delete();
 					}
 				}
 				catch(err)
 				{
 					console.log("An error occurred: " + err);
+					video.removeEventListener('play', reqAnimFram);
 					setStream(false);
 					return;
 				}
