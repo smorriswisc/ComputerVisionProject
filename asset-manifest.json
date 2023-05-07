@@ -1,17 +1,24 @@
 {
   "files": {
-    "main.css": "/ComputerVisionProject/static/css/main.ba0f21bc.css",
-    "main.js": "/ComputerVisionProject/static/js/main.26623ee8.js",
+    "main.css": "/ComputerVisionProject/static/css/main.23ac8525.css",
+    "main.js": "/ComputerVisionProject/static/js/main.676c647a.js",
+    "static/media/group1-shard1of5.bin": "/ComputerVisionProject/static/media/group1-shard1of5.2635bad9a0ffb6fe344b.bin",
+    "static/media/group1-shard2of5.bin": "/ComputerVisionProject/static/media/group1-shard2of5.5548fbf719ed00fd4b09.bin",
+    "static/media/group1-shard3of5.bin": "/ComputerVisionProject/static/media/group1-shard3of5.e48e46065c0ce6d023fd.bin",
+    "static/media/group1-shard4of5.bin": "/ComputerVisionProject/static/media/group1-shard4of5.6ec2a220c3bde99bbf56.bin",
+    "static/media/cnn_3.png": "/ComputerVisionProject/static/media/cnn_3.4c2ac86480fd82907fb8.png",
+    "static/media/group1-shard5of5.bin": "/ComputerVisionProject/static/media/group1-shard5of5.9cde18971c0fad615141.bin",
     "static/media/haarcascade_frontalface_default.xml": "/ComputerVisionProject/static/media/haarcascade_frontalface_default.bf5207edb33deb842f58.xml",
-    "static/media/cnn_3.png": "/ComputerVisionProject/static/media/cnn_3.089f95e44b71df6868cd.png",
     "static/media/silas.jpg": "/ComputerVisionProject/static/media/silas.b39a79abbb3915bd73b8.jpg",
+    "static/media/Accuracy.png": "/ComputerVisionProject/static/media/Accuracy.f587e342e4c5fe72e501.png",
     "static/media/UW.png": "/ComputerVisionProject/static/media/UW.ee357500440addd75db8.png",
+    "static/media/Loss.png": "/ComputerVisionProject/static/media/Loss.38abee9ca26e340e52cd.png",
     "index.html": "/ComputerVisionProject/index.html",
-    "main.ba0f21bc.css.map": "/ComputerVisionProject/static/css/main.ba0f21bc.css.map",
-    "main.26623ee8.js.map": "/ComputerVisionProject/static/js/main.26623ee8.js.map"
+    "main.23ac8525.css.map": "/ComputerVisionProject/static/css/main.23ac8525.css.map",
+    "main.676c647a.js.map": "/ComputerVisionProject/static/js/main.676c647a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba0f21bc.css",
-    "static/js/main.26623ee8.js"
+    "static/css/main.23ac8525.css",
+    "static/js/main.676c647a.js"
   ]
 }
