@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ComputerVisionProject/static/css/main.23ac8525.css",
-    "main.js": "/ComputerVisionProject/static/js/main.676c647a.js",
+    "main.js": "/ComputerVisionProject/static/js/main.206b2f19.js",
     "static/media/group1-shard1of5.bin": "/ComputerVisionProject/static/media/group1-shard1of5.2635bad9a0ffb6fe344b.bin",
     "static/media/group1-shard2of5.bin": "/ComputerVisionProject/static/media/group1-shard2of5.5548fbf719ed00fd4b09.bin",
     "static/media/group1-shard3of5.bin": "/ComputerVisionProject/static/media/group1-shard3of5.e48e46065c0ce6d023fd.bin",
@@ -15,10 +15,10 @@
     "static/media/Loss.png": "/ComputerVisionProject/static/media/Loss.38abee9ca26e340e52cd.png",
     "index.html": "/ComputerVisionProject/index.html",
     "main.23ac8525.css.map": "/ComputerVisionProject/static/css/main.23ac8525.css.map",
-    "main.676c647a.js.map": "/ComputerVisionProject/static/js/main.676c647a.js.map"
+    "main.206b2f19.js.map": "/ComputerVisionProject/static/js/main.206b2f19.js.map"
   },
   "entrypoints": [
     "static/css/main.23ac8525.css",
-    "static/js/main.676c647a.js"
+    "static/js/main.206b2f19.js"
   ]
 }
