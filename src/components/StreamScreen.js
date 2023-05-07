@@ -191,7 +191,7 @@ function StreamScreen() {
 					}
 					catch(ptr)
 					{
-						let err = cv.exceptionFromPtr(ptr)
+						let err = cv.exceptionFromPtr(ptr);
 						console.log("An error occurred: " + err.msg);
 						setStatusText("An error occurred: " + err.msg);
 						video.removeEventListener('play', reqAnimFram);
@@ -243,7 +243,12 @@ function StreamScreen() {
 				}
 				catch(err)
 				{
+					if(typeof err == 'number')
+					{
+						err = cv.exceptionFromPtr(err);
+					}
 					console.log("An error occurred: " + err);
+					setStatusText("An error occurred: " + err);
 					video.removeEventListener('play', reqAnimFram);
 					setStream(false);
 					return;
