@@ -9,16 +9,12 @@ function ResultsScreen() {
             <h1 className='orange'>Results</h1>
 			
 			<h3>Evaluation</h3>
-			<p>At the current state our model achieved a testing accuracy of 91.8% on the FER-2013 data set. The level of accuracy is comparable to those reported previously for facial emotion recognition (Table 2).  The accuracy and loss plots for this model are shown in Figure 2. </p>
+			<p>Even though I used the same training set and the same CNN model to start with, the accuracy of my trained model is slightly different than what was reported by <a href="https://www.kaggle.com/code/piyushjain16/facial-emotion-detection">piyushjain16</a>.</p>
 			
-			<ul>
-				<li>Accuracy: The CER model achieved an accuracy of 91.8% on the Emotion Recognition Challenge dataset, which contained 4,000 images with seven different emotional expressions.</li>
-				<li>Precision and Recall: The CER model achieved a precision of 86.6% and a recall of 87.1% on the Emotion Recognition Challenge dataset.</li>
-				<li>F1-score: The CER model achieved an F1-score of 85.9% on the Emotion Recognition Challenge dataset.</li>
-				<li>Confusion Matrix: The confusion matrix for the CER model on the Emotion Recognition Challenge dataset showed that it performed well on happy, neutral, and sad expressions, but struggled with surprise, anger, fear, and disgust expressions.</li>
-				<li>ROC Curve: The ROC curve for the CER model on the Emotion Recognition Challenge dataset showed an area under the curve (AUC) of 0.88, indicating that the model performed reasonably well in differentiating between positive and negative emotions.</li>
-			</ul>
-			<p>Our code repository can be found here <a href = "https://github.com/smorriswisc/ComputerVisionProject">https://github.com/smorriswisc/ComputerVisionProject</a></p>
+			<p>My model achieved an upper accuracy of 72.0%, while the online model reached 72.1%.</p>
+			<p>The Javascript embedded model seems to suffer from some inconsistency as well. The model will run perfectly fine when running from Python source, but Javascript has a strange behavior where the initial prediction is accurate, but each subsequent prediction is not. Enabling and Disabling the stream seems to be a workaround.</p>
+			
+			<p>My code repository can be found here <a href = "https://github.com/smorriswisc/ComputerVisionProject">https://github.com/smorriswisc/ComputerVisionProject</a></p>
 		
 		</Container>
 
