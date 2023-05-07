@@ -254,6 +254,10 @@ function StreamScreen() {
 					return;
 				}
 				
+				src.delete();
+				gray.delete();
+				faces.delete();
+				
 				requestAnimationFrame(processVideo);
             }
 			
@@ -265,6 +269,10 @@ function StreamScreen() {
             video.addEventListener('play', reqAnimFram);
         }catch(err)
         {
+			if(typeof err == 'number')
+			{
+				err = cv.exceptionFromPtr(err);
+			}
 			console.log("An error occurred: " + err);
 			setStatusText("An error occurred: " + err);
 			setStream(false);
