@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ComputerVisionProject/static/css/main.23ac8525.css",
-    "main.js": "/ComputerVisionProject/static/js/main.206b2f19.js",
+    "main.js": "/ComputerVisionProject/static/js/main.7739486f.js",
     "static/media/group1-shard1of5.bin": "/ComputerVisionProject/static/media/group1-shard1of5.2635bad9a0ffb6fe344b.bin",
     "static/media/group1-shard2of5.bin": "/ComputerVisionProject/static/media/group1-shard2of5.5548fbf719ed00fd4b09.bin",
     "static/media/group1-shard3of5.bin": "/ComputerVisionProject/static/media/group1-shard3of5.e48e46065c0ce6d023fd.bin",
@@ -9,16 +9,17 @@
     "static/media/cnn_3.png": "/ComputerVisionProject/static/media/cnn_3.4c2ac86480fd82907fb8.png",
     "static/media/group1-shard5of5.bin": "/ComputerVisionProject/static/media/group1-shard5of5.9cde18971c0fad615141.bin",
     "static/media/haarcascade_frontalface_default.xml": "/ComputerVisionProject/static/media/haarcascade_frontalface_default.bf5207edb33deb842f58.xml",
+    "static/media/Surprise.png": "/ComputerVisionProject/static/media/Surprise.d044ce82bcc1709cb211.png",
     "static/media/silas.jpg": "/ComputerVisionProject/static/media/silas.b39a79abbb3915bd73b8.jpg",
     "static/media/Accuracy.png": "/ComputerVisionProject/static/media/Accuracy.f587e342e4c5fe72e501.png",
     "static/media/UW.png": "/ComputerVisionProject/static/media/UW.ee357500440addd75db8.png",
     "static/media/Loss.png": "/ComputerVisionProject/static/media/Loss.38abee9ca26e340e52cd.png",
     "index.html": "/ComputerVisionProject/index.html",
     "main.23ac8525.css.map": "/ComputerVisionProject/static/css/main.23ac8525.css.map",
-    "main.206b2f19.js.map": "/ComputerVisionProject/static/js/main.206b2f19.js.map"
+    "main.7739486f.js.map": "/ComputerVisionProject/static/js/main.7739486f.js.map"
   },
   "entrypoints": [
     "static/css/main.23ac8525.css",
-    "static/js/main.206b2f19.js"
+    "static/js/main.7739486f.js"
   ]
 }
