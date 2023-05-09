@@ -79,10 +79,10 @@ function ImplementationScreen() {
 			
 			
 			<Zoom>
-				<img src={accuracyPic} alt="Graph of Accuracy"></img>
+				<img src={accuracyPic} className="myImage" alt="Graph of Accuracy"></img>
 			</Zoom>
 			<Zoom>
-				<img src={lossPic} alt="Graph of Loss"></img>
+				<img src={lossPic} className="myImage" alt="Graph of Loss"></img>
 			</Zoom>
 			<p className="imageCaption">Images 1 and 2: Change in accuracy and loss as training progresses through 15 epochs.</p>
 			<div>

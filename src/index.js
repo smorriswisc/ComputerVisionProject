@@ -20,7 +20,7 @@ root.render(
   <React.StrictMode>
     <Container fluid>
       <Row>
-        <Col xs={6} sm={5} md={4} lg={2} xl={2}>
+        <Col xs={7} sm={5} md={4} lg={2} xl={2}>
           <Navigator />
         </Col>
         <Col>

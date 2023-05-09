@@ -54,7 +54,7 @@ ol {
 }
 
 .streams {
-	display: flex;
+	display: block;
 }
 
 .code {
@@ -141,8 +141,19 @@ table tr, td{
 
 .welcomeImage {
 	width: 200px;
+	height: 213px;
 	margin: 0px 10px 10px 0px;
 	border-radius: 5%;
+}
+
+.myImage {
+	width: inherit;
+	max-width: 640px;
+	margin: 0px 10px 10px 0px;
+}
+
+.inherit {
+	width: inherit;
 }
 
 .emotionImage {
