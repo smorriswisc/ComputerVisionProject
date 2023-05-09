@@ -65,7 +65,7 @@ function StreamScreen() {
         const outContext = outputCanvas.getContext('2d', { willReadFrequently: true });
         const faceContext = faceCanvas.getContext('2d', { willReadFrequently: true });
 
-        navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } })
+        navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480, facingMode: "user" } })
             .then(function (streamO) {
                 setStreamObject(streamO);
                 video.srcObject = streamO;
@@ -171,7 +171,7 @@ function StreamScreen() {
 				try
 				{
 					
-					outContext.drawImage(video, 0, 0, outputCanvas.width, outputCanvas.height);
+					outContext.drawImage(video, 0, 0, 640, 480, 0, 0, outputCanvas.width, outputCanvas.height);
 					let imageData = outContext.getImageData(0, 0, outputCanvas.width, outputCanvas.height);
 					src.data.set(imageData.data);
 	
