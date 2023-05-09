@@ -65,7 +65,7 @@ function StreamScreen() {
         const outContext = outputCanvas.getContext('2d', { willReadFrequently: true });
         const faceContext = faceCanvas.getContext('2d', { willReadFrequently: true });
 
-        navigator.mediaDevices.getUserMedia({ video: true })
+        navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } })
             .then(function (streamO) {
                 setStreamObject(streamO);
                 video.srcObject = streamO;
